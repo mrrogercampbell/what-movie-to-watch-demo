@@ -24,9 +24,9 @@ Before you begin the walk-through feel to see a [Working Demo](https://relaxed-h
 		* *Be sure that you are cd’d into the React project before pasting this code snippet*
 4. Navigate into the `what-movie-to-watch` project 
 	* `cd what-movie-to-watch`
-4. Create a `components` directory
+5. Create a `components` directory
 	*  `mkdir src/components`
-3. Create a `Header` , `MovieGallery`, and `MovieCard` component within the `components` directory
+6. Create a `Header` , `MovieGallery`, and `MovieCard` component within the `components` directory
 	* `touch src/components/Header.js src/components/MovieGallery.js src/components/MovieCard.js`
 
 ## Setup API
@@ -106,7 +106,7 @@ function App() {
 
 export default App
 ```
-2.  Render the `MovieGallery`  component within the `App` component
+3.  Render the `MovieGallery`  component within the `App` component
 ```js
 // App.js
 import movieData from './movieData.json'
@@ -138,7 +138,7 @@ function App() {
 
 export default App;
 ```
-6. Open the `MovieGallery.js` file and create a functional component
+5. Open the `MovieGallery.js` file and create a functional component
 ```js
 // MovieGallery.js
 import React from 'react';
@@ -153,7 +153,7 @@ const MovieGallery = () => {
 
 export default MovieGallery;
 ```
-8. Check to see if the `MovieGallery`  component is receiving the the `movieData` prop
+6. Check to see if the `MovieGallery`  component is receiving the the `movieData` prop
 ```js
 // MovieGallery.js
 import React from 'react';
@@ -169,7 +169,7 @@ const MovieGallery = (props) => {
 
 export default MovieGallery;
 ```
-9. Import and render the `MovieCard` component within the `MovieGallery` component
+7. Import and render the `MovieCard` component within the `MovieGallery` component
 ```js
 // MovieGallery.js
 import React from 'react';
@@ -185,7 +185,7 @@ const MovieGallery = (props) => {
 
 export default MovieGallery;
 ```
-10. Pass the `movieData` prop to the `MovieCard` component as props
+8. Pass the `movieData` prop to the `MovieCard` component as props
 	* *Gotcha:*
 		* Refactor the `MovieGallery` component so that it destructure  props and just expects `movieData`
 			* More info can be found here: [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
@@ -205,7 +205,7 @@ const MovieGallery = ({movieData}) => {
 export default;
 
 ```
-10. Open the `MovieCard.js` file and create a functional component and check to see that it is successfully receiving the `movieData` prop
+9. Open the `MovieCard.js` file and create a functional component and check to see that it is successfully receiving the `movieData` prop
 ```js
 // MovieCard.js
 import React from 'react';
@@ -221,7 +221,7 @@ const MovieCard = (props) => {
 
 export default MovieCard;
 ```
-11. Refactor the `MovieCard`  component to render the `Poster`, `Title`, `Plot`, `Released`, `imdbRating`
+10. Refactor the `MovieCard`  component to render the `Poster`, `Title`, `Plot`, `Released`, `imdbRating`
 ```js
 // MovieCard.js
 import React from 'react';
@@ -302,7 +302,6 @@ function App() {
 export default App;
 ```
 
-
 ## Implement User Search Functionality
 1.  Open the `Header` file and create a functional component
 ```js
@@ -312,7 +311,7 @@ import React from 'react';
 const Header = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
@@ -320,7 +319,7 @@ const Header = () => {
 export default Header;
 ```
 2. Within the `Header` component create the following:
-	* An `input field` where a user can provide the name of a film   
+	* An `input field` where a user can provide the name of a film
 	* A `select` dropdown menu where a user can select the type of film
 		* It should have the following options:
 			* `Type` this should be hidden
@@ -415,7 +414,7 @@ export default Header
 ```
 5. Added each function to its corresponding `JSX Element`:
 	* `handleInput` should be set as the `input` tag’s `onChange`  method
-	* `handleSelectChange` should be set as the `select` tag’s `onChange`  
+	* `handleSelectChange` should be set as the `select` tag’s `onChange`
 	* `handleClick` should be set as the `button` tag’s  `onClick` method
 ```js
 // Header.js
@@ -492,14 +491,13 @@ function App() {
 }
 
 export default App;
-
 ```
 
 8.  In the `App` refactor the `fetchMovieData` function so that it accepts `searchedValue` and `selectedTypeValue` as parameters
 	* Then test to see if the arguments are being passed correctly
 ```js
 // App.js
-		
+
 // ... Space Saving Do not remove exisiting code
 function App() {
   const [movieData, setMovieData] = useState([])
@@ -507,7 +505,7 @@ function App() {
 	const fetchMovieData = (searchedValue, selectedTypeValue) => {
     console.log(`selectedTypeValue: ${selectedTypeValue}`)
     console.log(`searchedValue: ${searchedValue}`)
-    
+
 		let URL = `https://www.omdbapi.com/?apikey=47fad17f&t=star%20trek`
 
     console.log('fired')
@@ -525,8 +523,8 @@ function App() {
 
 export default App;
 ```
-8. In the `App` component refactor the `URL` variable’s value so that it utilizes `searchedValue` and `selectedTypeValue` as a part of the query string
-	* *Gotchas:* 
+9. In the `App` component refactor the `URL` variable’s value so that it utilizes `searchedValue` and `selectedTypeValue` as a part of the query string
+	* *Gotchas:*
 		* A potential side effect can happen if a user was to not provide a type value so to forego any issues provide `selectedTypeValue` with a default value of `null`
 		* Be sure to update the  `fetchMovieData` inside the `useEffect` so that an argument is provided for  `searchedValue` parameter
 		* Be sure to remove the logging from the `fetchMovieData` function
@@ -686,7 +684,7 @@ const MovieGallery = ({ movieData, title, recentGallery }) => {
 
 export default MovieGallery;
 ```
-1. Continue refactoring the `MovieGallery` component so that it contains two variables that perform the following logic:
+6. Continue refactoring the `MovieGallery` component so that it contains two variables that perform the following logic:
 	1. `listOfMovieCards` — this should store an array of `MovieCard` components based on a  `map`  method which iterates over the `previousMovies` state object.
 		* Each instance of the `MovieCard` component that is stored should receive the single instance of movie data that is being iterated over
 	2. `singleMovieCard` — should store a single instance of the `MovieCard` component which receives the `currentMovie` state object as a prop
@@ -837,7 +835,7 @@ function App() {
 export default App;
 ```
 
-5. Refactor each component with the following classes
+4. Refactor each component with the following classes
 	* *Gotcha*: just copy and paste the code below inside each component
 ```js
 // App.js
@@ -856,8 +854,6 @@ function App() {
 }
 
 export default App;
-
-
 ```
 ```js
 // Header.js
@@ -943,7 +939,7 @@ export default MovieCard;
 
 ## Refactor MovieGallery Component to be Reusable Pt. 2
 1. Finally within the `MovieGallery` component perform a check to see if `previousMovies` length is greater than 3; if it is remove the first item within the `previousMovies` state object and update its state.
-```js 
+```js
 // MovieGallery.js
 
 // ... Space Saving Do not remove exisiting code
@@ -964,7 +960,7 @@ const MovieGallery = ({ movieData, title, recentGallery }) => {
 };
 
 export default MovieGallery;
-``` 
+```
 ## Refactor MovieCard Component to Dynamically Render Thumb Icons
 1. Within the `components` directory create a `Thumb.js` file
 	* `touch src/components/Thumb.js`
@@ -980,7 +976,7 @@ import React from 'react'
 const Thumb = ({imdbRating}) => {
     return (
         <div>
-            
+
         </div>
     );
 };
@@ -997,7 +993,7 @@ import ThumbsDown from '../assets/thumb-down.png'
 const Thumb = ({imdbRating}) => {
     return (
         <div>
-            
+
         </div>
     );
 };
@@ -1038,7 +1034,7 @@ const Thumb = ({imdbRating}) => {
     const thumbsDownIcon = <img className='thumb-icon' src={ThumbsDown} alt='thumbs down icon' />
 
     const ratingCheck = imdbRating > 5 ? thumbsUpIcon : thumbsDownIcon
-    
+
 return (
         <div>
             {ratingCheck}
@@ -1050,7 +1046,7 @@ return (
 export default Thumb;
 ```
 8. Finally, import the `Thumb` component within the `MovieCard` component and render it right after the closing of the `.ratings-text` div
-	* *Gotcha:* Don’t forget to pass the `imdbRating` down as a prop to the `Thumb` component
+   * *Gotcha:* Don’t forget to pass the `imdbRating` down as a prop to the `Thumb` component
 ```js
 // MovieCard.js
 import React from 'react'
@@ -1075,7 +1071,6 @@ const MovieCard = ({ Poster, Title, Plot, Released, imdbRating }) => {
 
 export default MovieCard;
 ```
-
 ## Deploy to Netlify
 1. Be sure that all code is commit and pushed to the remote repo before starting this section 
 2. Go to [Netlify](_https://www.netlify.com/_) and either login or sign up for an account
@@ -1102,14 +1097,10 @@ export default MovieCard;
 9. Once Deployed click the deployed link
     * Example: `https://relaxed-hawking-4cc4a7.netlify.app/`
     ![Step9](./src/screenshots/step9.png)
-
-
-
 ## Resources
 * [React Hooks - Understanding Component Re-renders](https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928)
 * [Mosh's React Tutorial for Beginners](https://www.youtube.com/watch?v=Ke90Tje7VS0)
 * [Adding Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 * [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
-
 ## Wanna Talk Code?
 Please feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/mrrogercampbell/) if you have questions and or concerns. I do offer tutoring and mentoring services.
