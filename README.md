@@ -1,6 +1,8 @@
-# Movie App Walkthrough
+# Movie App Walk-Through
+This walk-through is one way of solving the `What Movie to Watch` [take home challenge](./prompt.md).
 
-- [Movie App Walkthrough](#movie-app-walkthrough)
+Before you begin the walk-through feel to see a [Working Demo](https://relaxed-hawking-4cc4a7.netlify.app/)
+- [Movie App Walk-Through](#movie-app-walk-through)
   - [Project Setup](#project-setup)
   - [Setup API](#setup-api)
   - [Render a Single MovieCard Within a MovieGallery](#render-a-single-moviecard-within-a-moviegallery)
