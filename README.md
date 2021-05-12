@@ -1,4 +1,18 @@
 # Movie App Walkthrough
+
+- [Movie App Walkthrough](#movie-app-walkthrough)
+  - [Project Setup](#project-setup)
+  - [Setup API](#setup-api)
+  - [Render a Single MovieCard Within a MovieGallery](#render-a-single-moviecard-within-a-moviegallery)
+  - [Refactor Static Data For API Data](#refactor-static-data-for-api-data)
+  - [Implement User Search Functionality](#implement-user-search-functionality)
+  - [Refactor MovieGallery Component to be Reusable Pt. 1](#refactor-moviegallery-component-to-be-reusable-pt-1)
+  - [Add Styling](#add-styling)
+  - [Refactor MovieGallery Component to be Reusable Pt. 2](#refactor-moviegallery-component-to-be-reusable-pt-2)
+  - [Refactor MovieCard Component to Dynamically Render Thumb Icons](#refactor-moviecard-component-to-dynamically-render-thumb-icons)
+  - [Deploy to Netlify](#deploy-to-netlify)
+    - [Resources](#resources)
+    - [Wanna Talk Code?](#wanna-talk-code)
 ## Project Setup
 1. Via the terminal create a React project called  `what-movie-to-watch`
 	*  `npx create-react-app what-movie-to-watch`
@@ -171,9 +185,9 @@ export default MovieGallery;
 ```
 10. Pass the `movieData` prop to the `MovieCard` component as props
 	* *Gotcha:*
-		* Refactor the `MovieGallery` component so that it destructure  props and just expects `movieData` 
+		* Refactor the `MovieGallery` component so that it destructure  props and just expects `movieData`
 			* More info can be found here: [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
-```js 
+```js
 // MovieGallery.js
 import React from 'react';
 import MovieCard from './MovieCard'
@@ -1002,7 +1016,7 @@ const Thumb = ({imdbRating}) => {
 
     return (
         <div>
-            
+
         </div>
     );
 };
@@ -1086,3 +1100,14 @@ export default MovieCard;
 9. Once Deployed click the deployed link
     * Example: `https://relaxed-hawking-4cc4a7.netlify.app/`
     ![Step9](./src/screenshots/step9.png)
+
+
+
+### Resources
+* [React Hooks - Understanding Component Re-renders](https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928)
+* [Mosh's React Tutorial for Beginners](https://www.youtube.com/watch?v=Ke90Tje7VS0)
+* [Adding Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
+* [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
+
+### Wanna Talk Code?
+Please feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/mrrogercampbell/) if you have questions and or concerns. I do offer tutoring and mentoring services.
