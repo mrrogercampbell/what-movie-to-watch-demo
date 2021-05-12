@@ -641,7 +641,9 @@ export default MovieGallery;
 5. Continue refactoring the `MovieGallery` component by adding a `useEffect` that watches for updates to the `movieData` component and on effect sets the value of `previousMovies` and `currentMovie`
 	* *Gotcha:*
 		* Be sure to import the `useEffect` method
-		* We need to use `// eslint-disable-next-line react-hooks/exhaustive-deps` *EXPLAIN WHY!!!*
+		* We can utilize the `// eslint-disable-next-line react-hooks/exhaustive-deps` here to remove the `dependency` error that is triggered here
+  		* This is not a production solution this is a quick fix for the shake of this example
+  		* More info on this here: [Is it safe to omit functions from the list of dependencies?](https://reactjs.org/docs/hooks-faq.html#is-it-safe-to-omit-functions-from-the-list-of-dependencies)
 ```js
 // MovieGallery.js
 
@@ -668,7 +670,7 @@ const MovieGallery = ({ movieData, title, recentGallery }) => {
 
 export default MovieGallery;
 ```
-6. Continue refactoring the `MovieGallery` component so that it contains two variables that perform the following logic:
+1. Continue refactoring the `MovieGallery` component so that it contains two variables that perform the following logic:
 	1. `listOfMovieCards` — this should store an array of `MovieCard` components based on a  `map`  method which iterates over the `previousMovies` state object.
 		* Each instance of the `MovieCard` component that is stored should receive the single instance of movie data that is being iterated over
 	2. `singleMovieCard` — should store a single instance of the `MovieCard` component which receives the `currentMovie` state object as a prop
@@ -723,9 +725,8 @@ const MovieGallery = ({ movieData, title, recentGallery }) => {
 
 export default MovieGallery;
 ```
-8.  With the current logic there is a nasty side effect happen due to the initial api call being performed in the `App` component. 
-	* To fix this refactor the `App` component so that it no longer performs the initial `fetchMoiveData` function on render and instead set `movieData`’s initial state value equal to the 
-
+8. With the current logic there is a nasty side effect happen due to the initial api call being performed in the `App` component.
+	* To fix this refactor the `App` component so that it no longer performs the initial `fetchMovieData` function on render and instead set `movieData`’s initial state value equal to the JSON data
 ## Add Styling
 1. Within the `src` directory create a `style` directory
 	* `mkdir src/style`
