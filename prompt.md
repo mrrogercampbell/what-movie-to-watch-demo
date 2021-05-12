@@ -1,18 +1,13 @@
 # What Movie to Watch Take Home Challenge
-
 ## Instructions:
 * Build a React project that fulfills all requirements listed below
 * Submit links to your github repo and deployed project via this [Google Form](#)
-
-
 ## Part 1: What to Watch
 
 * **Goal**: Create a simple React application that given a movie title and type will return the movie information from Open Movie Database. It will also keep the last 3 searches in memory
-
 * **Example**: When given the title symbol Spongebob, your application should use the open movie database to return: the summary of the show, its release date, and ranking. If the ranking is above a 5, display a thumbs up. If it’s below a 5, display a thumbs down.
 
 ![Project Mock](./src/assets/ProjectMock.png)
-
 ## Requirements:
 * The application should ingest and render data from the [Open Movie Database](https://www.omdbapi.com/) based on user input.
   * You will need to read the documentation to learn how to interact with the API.
