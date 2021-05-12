@@ -27,7 +27,7 @@
       * Release Date
       * Rating
       * Thumb Icon - If the film’s rating is greater than 5 then it should render a thumbs up icon, else it should render a thumbs down icon
-* Notes:
+## Notes:
   * You may use any libraries you think you'll need to complete the task
   * [Working Demo](https://relaxed-hawking-4cc4a7.netlify.app/)
 
