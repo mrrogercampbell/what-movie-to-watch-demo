@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react'
+import MovieGallery from './components/MovieGallery'
+import Header from './components/Header'
+import './style/styles.css'
 
 function App() {
+  const [movieData, setMovieData] = useState([])
+
+  const fetchMovieData = (searchedValue, selectedTypeValue = null
+  ) => {
+    let URL = `https://www.omdbapi.com/?apikey=47fad17f&t=${searchedValue}&type=${selectedTypeValue}`
+
+    fetch(URL)
+      .then(res => res.json())
+      .then(jsonData => setMovieData(jsonData))
+  }
+
+  useEffect(() => {
+    fetchMovieData('star wars')
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header fetchMovieData={fetchMovieData} />
+      <MovieGallery title={'Current Search'} movieData={movieData} recentGallery={false} />
+      <MovieGallery title={'Previous 3 Searches'} movieData={movieData} recentGallery={true} />
     </div>
   );
 }

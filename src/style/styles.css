@@ -1,0 +1,66 @@
+/* App Component Styles */
+.App{
+  display: flex;
+  flex-direction: column;
+}
+
+/* MovieCard Component Styles */
+.movie{
+  /* height: auto; */
+  width: 500px;
+  border: lightgrey 5px solid;
+  margin: 10px;
+}
+
+.ratings-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+img{
+  width: auto;
+  height: 200px;
+  float: left;
+  margin: 15px;
+}
+
+/* MovieGallery Styles */
+.container {
+    width: 100%;
+}
+
+.movie-gallery-container{
+    margin: 10px;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    background: #0071fa;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+}
+
+/* Header Component Styles */
+.container-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+  background-color: #f7f8f9;
+}
+
+.what-title{
+  font-weight: 600;
+  font-size: medium;
+}
+
+/* Thumb Component Styles */
+.thumb-icon{
+    height: 50px;
+}
