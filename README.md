@@ -1083,5 +1083,5 @@ export default MovieCard;
     *  This might take a few minutes…
     ![Step8](./src/screenshots/step8.png)
 9. Once Deployed click the deployed link
-    * Example: `https://inspiring-carson-5559a4.netlify.app`
+    * Example: `https://relaxed-hawking-4cc4a7.netlify.app/`
     ![Step9](./src/screenshots/step9.png)
