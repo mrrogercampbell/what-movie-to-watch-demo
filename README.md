@@ -11,8 +11,8 @@
   - [Refactor MovieGallery Component to be Reusable Pt. 2](#refactor-moviegallery-component-to-be-reusable-pt-2)
   - [Refactor MovieCard Component to Dynamically Render Thumb Icons](#refactor-moviecard-component-to-dynamically-render-thumb-icons)
   - [Deploy to Netlify](#deploy-to-netlify)
-    - [Resources](#resources)
-    - [Wanna Talk Code?](#wanna-talk-code)
+  - [Resources](#resources)
+  - [Wanna Talk Code?](#wanna-talk-code)
 ## Project Setup
 1. Via the terminal create a React project called  `what-movie-to-watch`
 	*  `npx create-react-app what-movie-to-watch`
@@ -1103,11 +1103,11 @@ export default MovieCard;
 
 
 
-### Resources
+## Resources
 * [React Hooks - Understanding Component Re-renders](https://medium.com/@guptagaruda/react-hooks-understanding-component-re-renders-9708ddee9928)
 * [Mosh's React Tutorial for Beginners](https://www.youtube.com/watch?v=Ke90Tje7VS0)
 * [Adding Custom Environment Variables](https://create-react-app.dev/docs/adding-custom-environment-variables/)
 * [Destructuring Props in React](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0)
 
-### Wanna Talk Code?
+## Wanna Talk Code?
 Please feel free to reach out to me via [LinkedIn](https://www.linkedin.com/in/mrrogercampbell/) if you have questions and or concerns. I do offer tutoring and mentoring services.
